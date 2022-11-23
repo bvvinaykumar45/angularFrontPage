@@ -1,0 +1,122 @@
+<div class="col-md-4" style="width:400px; margin-left:20px">
+  <form
+    #addDataForm="ngForm"
+    (ngSubmit)="addData(addDataForm.value)"
+    autocomplete="off"
+    novalidate
+  >
+    <div class="form-group">
+      <label for="firstName">First Name : </label>
+      <input
+      [(ngModel)]="firstName"
+      name="firstName"
+      id="firstName"
+      type="text"
+      class="form-control"
+      placeholder="Enter First Name..."
+      required
+      />
+      <em class='em'
+        *ngIf="
+          addDataForm.controls.firstName.invalid &&
+          addDataForm.controls.firstName?.touched
+        "
+        >Required
+      </em>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name : </label>
+      <input
+      [(ngModel)]="lastName"
+      name="lastName"
+      id="lastName"
+      type="text"
+      class="form-control"
+      placeholder="Enter Last Name..."
+      required
+      />
+      <em
+        *ngIf="
+          addDataForm.controls.lastName.invalid &&
+          addDataForm.controls.lastName?.touched
+        "
+        >Required</em
+      >
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender : </label>
+      <select
+      [(ngModel)]="gender"
+      name="gender"
+      id="gender"
+      class="form-control"
+      required
+      >
+      <option value="none" selected>Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <em *ngIf="addDataForm.controls.gender?.value === 'none'">Required</em>
+    </div>
+    <div class="form-group">
+      <label for="email">EmailId : </label>
+      <input
+      [(ngModel)]="email"
+      name="email"
+      id="email"
+      type="email"
+      class="form-control"
+      placeholder="abc@xyz.com"
+      required ngModel email="true"
+      />
+      <em
+        *ngIf="
+          addDataForm.controls.email?.invalid &&
+          addDataForm.controls.email?.touched
+        "
+        >Required</em
+      >
+      <em
+        *ngIf="
+          !addDataForm.controls.email?.errors.email
+        "
+        >Invalid Email Id</em
+      >
+    </div>
+    <div class="form-group">
+      <label for="phoneNo">Phone No : </label>
+      <input
+      [(ngModel)]="phoneNo"
+      name="phoneNo"
+      id="phoneNo"
+      type="text"
+      class="form-control"
+      placeholder="76xxxxxx22"
+      required
+      />
+      <em
+        *ngIf="
+          addDataForm.controls.phoneNo.invalid &&
+          addDataForm.controls.phoneNo?.touched
+        "
+        >Required</em
+      >
+    </div>
+    <br />
+    <button
+      type="submit"
+      [disabled]="addDataForm.invalid"
+      class="btn btn-primary"
+    >
+      Submit
+    </button>
+    <button
+      type="button"
+      style="margin-left:10px"
+      class="btn btn-danger"
+      (click)="clearAllData()"
+    >
+      Clear
+    </button>
+  </form>
+</div>
