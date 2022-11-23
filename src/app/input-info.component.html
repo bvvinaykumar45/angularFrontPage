@@ -8,15 +8,16 @@
     <div class="form-group">
       <label for="firstName">First Name : </label>
       <input
-      [(ngModel)]="firstName"
-      name="firstName"
-      id="firstName"
-      type="text"
-      class="form-control"
-      placeholder="Enter First Name..."
-      required
+        [(ngModel)]="firstName"
+        name="firstName"
+        id="firstName"
+        type="text"
+        class="form-control"
+        placeholder="Enter First Name..."
+        required
       />
-      <em class='em'
+      <em
+        class="em"
         *ngIf="
           addDataForm.controls.firstName.invalid &&
           addDataForm.controls.firstName?.touched
@@ -27,13 +28,13 @@
     <div class="form-group">
       <label for="lastName">Last Name : </label>
       <input
-      [(ngModel)]="lastName"
-      name="lastName"
-      id="lastName"
-      type="text"
-      class="form-control"
-      placeholder="Enter Last Name..."
-      required
+        [(ngModel)]="lastName"
+        name="lastName"
+        id="lastName"
+        type="text"
+        class="form-control"
+        placeholder="Enter Last Name..."
+        required
       />
       <em
         *ngIf="
@@ -46,28 +47,28 @@
     <div class="form-group">
       <label for="gender">Gender : </label>
       <select
-      [(ngModel)]="gender"
-      name="gender"
-      id="gender"
-      class="form-control"
-      required
+        [(ngModel)]="gender"
+        name="gender"
+        id="gender"
+        class="form-control"
+        required
       >
-      <option value="none" selected>Select</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
-    <em *ngIf="addDataForm.controls.gender?.value === 'none'">Required</em>
+        <option value="none" selected>Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <em *ngIf="addDataForm.controls.gender?.value === 'none'">Required</em>
     </div>
     <div class="form-group">
       <label for="email">EmailId : </label>
       <input
-      [(ngModel)]="email"
-      name="email"
-      id="email"
-      type="email"
-      class="form-control"
-      placeholder="abc@xyz.com"
-      required ngModel email="true"
+        [(ngModel)]="email"
+        name="email"
+        id="email"
+        type="email"
+        class="form-control"
+        placeholder="abc@xyz.com"
+        required
       />
       <em
         *ngIf="
@@ -76,23 +77,17 @@
         "
         >Required</em
       >
-      <em
-        *ngIf="
-          !addDataForm.controls.email?.errors.email
-        "
-        >Invalid Email Id</em
-      >
     </div>
     <div class="form-group">
       <label for="phoneNo">Phone No : </label>
       <input
-      [(ngModel)]="phoneNo"
-      name="phoneNo"
-      id="phoneNo"
-      type="text"
-      class="form-control"
-      placeholder="76xxxxxx22"
-      required
+        [(ngModel)]="phoneNo"
+        name="phoneNo"
+        id="phoneNo"
+        type="text"
+        class="form-control"
+        placeholder="76xxxxxx22"
+        required
       />
       <em
         *ngIf="

@@ -10,9 +10,14 @@ import { DataDisplayComponent } from './data-display.component';
 import { DataHolderService } from './data-holder.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, InputInfoComponent, DataDisplayComponent ],
-  providers : [ DataHolderService ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    InputInfoComponent,
+    DataDisplayComponent,
+  ],
+  providers: [DataHolderService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
