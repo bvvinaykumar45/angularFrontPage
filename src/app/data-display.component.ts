@@ -21,4 +21,9 @@ export class DataDisplayComponent implements OnInit {
   ngOnInit() {
     this.data = this.dataHolder.getData();
   }
+
+  editData(id){
+    
+  }
 }
+
