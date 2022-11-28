@@ -19,20 +19,23 @@ export class InputInfoComponent {
   constructor(private dataHolder: DataHolderService){
 
   }
+  id
   firstName
   lastName
   gender='none'
-  email
+  email 
   phoneNo
   
   addData(formValues){
     this.dataHolder.addData(formValues)
     alert('Data has been added successfully')
+    console.log(formValues)
   }
 
   clearAllData(){
     if(confirm('Are you sure to clear all data?')){
       this.dataHolder.clearData();
+      this.id=undefined;
       this.firstName='';
       this.lastName='';
       this.gender='none';

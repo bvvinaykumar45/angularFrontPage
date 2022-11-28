@@ -73,13 +73,23 @@
         class="form-control"
         placeholder="abc@xyz.com"
         required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
       />
       <em
         *ngIf="
           addDataForm.controls.email?.invalid &&
-          addDataForm.controls.email?.touched
+          addDataForm.controls.email?.touched &&
+          addDataForm.controls.email?.errors.required
         "
         >Required</em
+      >
+      <em
+        *ngIf="
+          addDataForm.controls.email?.invalid &&
+          addDataForm.controls.email?.touched &&
+          addDataForm.controls.email?.errors.pattern
+        "
+        >Must be a vaild Email Id</em
       >
     </div>
     <div class="form-group">
@@ -92,13 +102,23 @@
         class="form-control"
         placeholder="76xxxxxx22"
         required
+        pattern="^[6789]\d{9}$"
       />
       <em
         *ngIf="
-          addDataForm.controls.phoneNo.invalid &&
-          addDataForm.controls.phoneNo?.touched
+          addDataForm.controls.phoneNo?.invalid &&
+          addDataForm.controls.phoneNo?.touched &&
+          addDataForm.controls.phoneNo?.errors.required
         "
         >Required</em
+      >
+      <em
+        *ngIf="
+          addDataForm.controls.phoneNo?.invalid &&
+          addDataForm.controls.phoneNo?.touched &&
+          addDataForm.controls.phoneNo?.errors.pattern
+        "
+        >Please enter a valid Phone Number</em
       >
     </div>
     <br />

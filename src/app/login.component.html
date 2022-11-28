@@ -1,0 +1,19 @@
+<br/>
+<br/>
+<h1 style="text-align:center">Login</h1>
+<br/>
+<hr>
+<br/>
+<div class="col-md-4" style="width:400px; margin-left:20px">
+  <form #loginForm="ngForm" (ngSubmit)="authenticate(loginForm.value)" autocomplete="off" novalidate>
+    <label for="username">Username : </label>
+    <input type="text" id="name" name="name" class="form-control" required/>
+    <em *ngIf="loginForm.controls.username?.invalid && loginForm.controls.username?.touched">Required</em>
+    <br/>
+    <label for="password">Password : </label>
+    <input type="password" id="password" name="password" class="form-control" required/>
+    <em *ngIf="loginForm.controls.password?.invalid && loginForm.controls.password?.touched">Required</em>
+    <br/>
+    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+  </form>
+</div>

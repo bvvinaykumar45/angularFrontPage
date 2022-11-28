@@ -10,7 +10,12 @@ export class DataHolderService{
     return perInfo
   }
 
+  getDataById(id:number){
+    return perInfo.filter((element)=>element.id === id)
+  }
+
   addData(formValues){
+    formValues.id = i++
     perInfo.push(formValues)
   }
 
@@ -21,12 +26,14 @@ export class DataHolderService{
   }
   
 }
+  let i =1;
 
   var perInfo:PersonalInfo[]
 
   perInfo = []
 
-  interface PersonalInfo{
+  export interface PersonalInfo{
+    id:number;
     firstName:string;
     lastName:string;
     gender: string;
