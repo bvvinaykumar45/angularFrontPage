@@ -1,11 +1,9 @@
 <nav class="navbar">
   <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact us</a></li>
-      <div class="search">
-          <input type="text" name="search" id="search" placeholder="Search this website">
-      </div>
+      <li style="font-weight:bold;font-family:rockwell;font-size:20px">EmployeeApp</li>
+      <li><a routerLink="input-info">Add Employee</a></li>
+      <li><a routerLink="data-display">Employee Data</a></li>
+      <li *ngIf="loggedin"><a routerLink="login">Login</a></li>
+      <li *ngIf="!loggedin"><a routerLink="login" (click)="logout()">Logout</a></li>
   </ul>
 </nav>

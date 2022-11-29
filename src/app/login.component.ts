@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataHolderService } from './data-holder.service';
+
 
 @Component({
   selector: 'login',
@@ -24,7 +26,7 @@ import { Router } from '@angular/router';
   ],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataHolder:DataHolderService) {}
 
   logindetails: ILogin[] = [
     {
@@ -37,10 +39,10 @@ export class LoginComponent {
     },
   ];
 
-  username:string
-  password
+  username: string;
+  password;
   authenticate(loginForm) {
-    var authentication:boolean = false
+    var authentication: boolean = false;
     this.logindetails.forEach((element) => {
       if (
         loginForm.username === element.username &&
@@ -48,12 +50,13 @@ export class LoginComponent {
       ) {
         this.router.navigate(['data-display']);
         authentication = true;
+        this.dataHolder.loggedin();
       }
     });
-    if(!authentication){
-      alert("Invalid Credentials");
-      this.username=''
-      this.password=''
+    if (!authentication) {
+      alert('Invalid Credentials');
+      this.username = '';
+      this.password = '';
     }
   }
 }

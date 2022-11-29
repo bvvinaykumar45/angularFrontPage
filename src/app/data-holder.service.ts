@@ -6,6 +6,7 @@ export class DataHolderService{
 
   }
 
+
   getData(){
     return perInfo
   }
@@ -33,13 +34,23 @@ export class DataHolderService{
       perInfo.pop()
     }
   }
+
+  loggedin(){
+    let log:boolean;
+    log = !loggedin;
+    return log;
+  }
   
 }
+
+  let loggedin:boolean = true;
   let i =1;
 
   var perInfo:PersonalInfo[]
 
   perInfo = []
+
+  
 
   export interface PersonalInfo{
     id:number;
