@@ -3,7 +3,7 @@
       <li style="font-weight:bold;font-family:rockwell;font-size:20px">EmployeeApp</li>
       <li><a routerLink="input-info">Add Employee</a></li>
       <li><a routerLink="data-display">Employee Data</a></li>
-      <li *ngIf="loggedin"><a routerLink="login">Login</a></li>
-      <li *ngIf="!loggedin"><a routerLink="login" (click)="logout()">Logout</a></li>
+      <li *ngIf="!loggedin"><a routerLink="login">Login</a></li>
+      <li *ngIf="loggedin"><a routerLink="login" (click)="logout()">Logout</a></li>
   </ul>
 </nav>

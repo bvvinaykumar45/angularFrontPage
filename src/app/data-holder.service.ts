@@ -35,15 +35,8 @@ export class DataHolderService{
     }
   }
 
-  loggedin(){
-    let log:boolean;
-    log = !loggedin;
-    return log;
-  }
-  
 }
 
-  let loggedin:boolean = true;
   let i =1;
 
   var perInfo:PersonalInfo[]

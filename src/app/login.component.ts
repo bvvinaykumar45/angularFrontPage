@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataHolderService } from './data-holder.service';
-
 
 @Component({
   selector: 'login',
@@ -26,7 +24,7 @@ import { DataHolderService } from './data-holder.service';
   ],
 })
 export class LoginComponent {
-  constructor(private router: Router, private dataHolder:DataHolderService) {}
+  constructor(private router: Router) {}
 
   logindetails: ILogin[] = [
     {
@@ -36,6 +34,10 @@ export class LoginComponent {
     {
       username: 'ganshash',
       password: 'QwertyKey',
+    },
+    {
+      username: 'c',
+      password: 'c',
     },
   ];
 
@@ -50,7 +52,6 @@ export class LoginComponent {
       ) {
         this.router.navigate(['data-display']);
         authentication = true;
-        this.dataHolder.loggedin();
       }
     });
     if (!authentication) {

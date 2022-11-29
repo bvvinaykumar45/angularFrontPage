@@ -17,32 +17,28 @@ import { Router } from '@angular/router';
   ],
 })
 export class InputInfoComponent {
-  constructor(private dataHolder: DataHolderService, private router:Router){
+  constructor(private dataHolder: DataHolderService, private router: Router) {}
+  id;
+  firstName;
+  lastName;
+  gender = 'none';
+  email;
+  phoneNo;
 
-  }
-  id
-  firstName
-  lastName
-  gender='none'
-  email 
-  phoneNo
-  
-  addData(formValues){
-    this.dataHolder.addData(formValues)
-    alert('Data has been added successfully')
-    this.router.navigate(['data-display'])
+  addData(formValues) {
+    this.dataHolder.addData(formValues);
+    alert('Data has been added successfully');
+    this.router.navigate(['data-display']);
   }
 
-  clearAllData(){
-    if(confirm('Are you sure to clear all data?')){
-      this.dataHolder.clearData();
-      this.id=undefined;
-      this.firstName='';
-      this.lastName='';
-      this.gender='none';
-      this.email='';
-      this.phoneNo='';
+  clearForm() {
+    if (confirm('Are you sure to clear form?')) {
+      this.id = undefined;
+      this.firstName = '';
+      this.lastName = '';
+      this.gender = 'none';
+      this.email = '';
+      this.phoneNo = '';
     }
-    
   }
 }

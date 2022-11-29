@@ -10,9 +10,10 @@ import { DataHolderService } from './data-holder.service';
 export class NavbarComponent {
   username: any;
   constructor(private dataHolder: DataHolderService) {}
+  
   logout() {
-    this.dataHolder.loggedin();
+    this.loggedin = true
   }
 
-  loggedin = this.dataHolder.loggedin();
+  loggedin:boolean=false;
 }

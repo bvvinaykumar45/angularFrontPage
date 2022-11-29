@@ -26,5 +26,11 @@ export class DataDisplayComponent implements OnInit {
   editData(id){
     this.router.navigate(['edit-info',id])
   }
+
+  clearAllData(){
+    if(confirm('Are you sure to clear all data?')){
+      this.dataHolder.clearData();
+    }
+  }
 }
 
