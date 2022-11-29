@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataHolderService } from './data-holder.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'input-info',
@@ -16,7 +17,7 @@ import { DataHolderService } from './data-holder.service';
   ],
 })
 export class InputInfoComponent {
-  constructor(private dataHolder: DataHolderService){
+  constructor(private dataHolder: DataHolderService, private router:Router){
 
   }
   id
@@ -29,7 +30,7 @@ export class InputInfoComponent {
   addData(formValues){
     this.dataHolder.addData(formValues)
     alert('Data has been added successfully')
-    console.log(formValues)
+    this.router.navigate(['data-display'])
   }
 
   clearAllData(){

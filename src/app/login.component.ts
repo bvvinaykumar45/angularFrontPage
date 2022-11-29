@@ -6,8 +6,19 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styles: [
     `
+    body{
+      text-align:center;
+    }
+    form{
+      display:inline-block;
+    }
   label{
+    float:left;
     font-weight:bold;
+  }
+  em{
+    float:right;
+    color:red;
   }
   `,
   ],
@@ -26,15 +37,24 @@ export class LoginComponent {
     },
   ];
 
+  username:string
+  password
   authenticate(loginForm) {
+    var authentication:boolean = false
     this.logindetails.forEach((element) => {
       if (
         loginForm.username === element.username &&
         loginForm.password === element.password
       ) {
-        return;
+        this.router.navigate(['data-display']);
+        authentication = true;
       }
     });
+    if(!authentication){
+      alert("Invalid Credentials");
+      this.username=''
+      this.password=''
+    }
   }
 }
 

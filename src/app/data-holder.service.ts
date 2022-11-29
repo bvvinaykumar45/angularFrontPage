@@ -11,12 +11,21 @@ export class DataHolderService{
   }
 
   getDataById(id:number){
-    return perInfo.filter((element)=>element.id === id)
+    return perInfo.find(element => element.id === id)
   }
 
   addData(formValues){
     formValues.id = i++
     perInfo.push(formValues)
+  }
+
+  editData(formValues){
+    console.log(formValues)
+    var editValue = perInfo.find(element => element.id === formValues.id)
+    const index:number = perInfo.indexOf(editValue)
+    if(index!==-1){
+      perInfo[index] = formValues;
+    }
   }
 
   clearData(){
